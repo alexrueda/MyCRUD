@@ -1,3 +1,20 @@
+/*
+.well[ui-view]{
+	height: 365px; 
+}
+*/
+.ui-view-container{
+	position: relative;
+}
+
+[ui-view].ng-enter, 
+[ui-view].ng-leave{
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+
 .ng-enter{
 	animation: fadeIn 1s;
 	-webkit-animation: fadeIn 1s;
