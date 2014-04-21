@@ -1,6 +1,17 @@
 <h1>Mirando materias</h1>
 
-<table class="table">
+<form ng-submit="saveNewMateria()">
+	<h3>Cree materia</h3>
+	<input ng-model="mateNueva.nombre" type="text" class="form-control" placeholder="Ingrese el nombre" />
+
+	<input ng-model="mateNueva.nivel" type="text" class="form-control" placeholder="Ingrese el nivel" />
+
+	<input type="submit" class="btn btn-success" class="" value="Crear">
+</form>
+
+<hr/>
+
+<table class="table table-hover">
   <thead>
   	<tr>
 		<td>No</td>
@@ -14,7 +25,7 @@
   	<tr ng-repeat="(key, materia) in Materias">
 		<td>{{ key+1 }}</td>
 		<td>{{ materia.nombre }}</td>
-		<td>{{ materia.grupo }}</td>
+		<td>{{ materia.nivel }}</td>
 		<td>
 			<a href="#">Editar</a>
 			<a href="#">Eliminar</a>
