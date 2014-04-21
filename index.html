@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<meta charset="UTF-8">
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="scripts/libs/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+</head>
+<body ng-app="rutasApp" class="container">
+	<h1>Hola mundo cruel</h1>
+
+	<div class="row">
+		<div class="list-group col-xs-3" >
+			<a ui-sref="main" class="list-group-item" ui-sref-active="active">Ir al main</a>
+			<a ui-sref="usuarios" class="list-group-item" ui-sref-active="active">Ir al usuarios</a>
+			<a ui-sref="Grupos" class="list-group-item" ui-sref-active="active">Aquí nos largamos a los grupos</a>
+			<a ui-sref="preguntas" class="list-group-item" ng-class="{active:$state.includes('preguntas')}">Ir a Preguntas</a>
+		</div>
+	
+		<a class="btn btn-primary" popover="Hola mundo" popover-title="Saludo" popover-placement="right">Presioname</a>
+
+		<div ui-view></div>
+
+	</div>
+
+<script type="text/javascript" src="scripts/libs/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/libs/angular.js"></script>
+<script type="text/javascript" src="scripts/libs/angular-ui-router.js"></script>
+<script type="text/javascript" src="scripts/libs/ui-bootstrap-tpls.js"></script>
+<script type="text/javascript" src="scripts/libs/angular-animate.js"></script>
+<script type="text/javascript" src="scripts/app.js"></script>
+<script type="text/javascript" src="scripts/otroConfig.js"></script>
+<script type="text/javascript" src="scripts/AlumnosCtrl.js"></script>
+<script type="text/javascript" src="scripts/AlumnosService.js"></script>
+</body>
+</html>
