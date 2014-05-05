@@ -8,6 +8,7 @@ angular.module('rutasApp', [
 	// Para permitir el CORS
 	$httpProvider.defaults.useXDomain = true;
 	//delete $httpProvider.defaults.headers.common['X-Requested-With'];
+	//provider.defaults.headers.post["X-CSRFToken"] = $cookies.csrftoken; // Requiere ngCookies
 	$httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
 	$httpProvider.defaults.headers.put['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
 

@@ -1,22 +1,25 @@
 <h1>Mirando materias</h1>
 
-<form ng-submit="saveNewMateria()" name="frmNewMateria">
+<form ng-submit="saveNewMateria()" name="frmNewMateria" ng-show="mostrando">
 	<h3>Cree materia</h3>
-	<input ng-model="mateNueva.nombre" type="text" class="form-control" placeholder="Ingrese el nombre" />
-
-	<input ng-model="mateNueva.nivel" type="text" class="form-control" placeholder="Ingrese el nivel" />
+	<div class="control-group">
+		<input ng-model="mateNueva.nombre" type="text" class="form-control" placeholder="Ingrese el nombre" />
+	</div>
+	
 
 	<input type="submit" class="btn btn-success" class="" value="Crear">
+	<input type="button" class="btn btn-warning" class="" value="Cancelar" ng-click="ocultarForm()">
 </form>
 
 <hr/>
+
+<button ng-show="btCrearMostrar" ng-click="mostrarForm()" class="btn btn-primary">Crear materia</button>
 
 <table class="table table-hover">
   <thead>
   	<tr>
 		<td>No</td>
 		<td>Nombre</td>
-		<td>Grupo</td>
 		<td>Edit</td>
 	</tr>
   </thead>
@@ -25,9 +28,8 @@
   	<tr ng-repeat="(key, materia) in Materias">
 		<td>{{ key+1 }}</td>
 		<td>{{ materia.nombre }}</td>
-		<td>{{ materia.nivel }}</td>
 		<td>
-			<a href="#">Editar</a>
+			<a href="#" ng-click="editMat(materia)">Editar</a>
 			<a href="#">Eliminar</a>
 		</td>
 	</tr>
