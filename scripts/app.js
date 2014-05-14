@@ -11,8 +11,7 @@ angular.module('rutasApp', [
 	//provider.defaults.headers.post["X-CSRFToken"] = $cookies.csrftoken; // Requiere ngCookies
 	$httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
 	$httpProvider.defaults.headers.put['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
-
-
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
 	$urlRouterProvider.otherwise('/')
 
@@ -25,6 +24,11 @@ angular.module('rutasApp', [
 			url: '/materias',
 			templateUrl: 'views/materias.tpl.html',
 			controller: 'MateriasCtrl'
+		})
+		.state('usuarios', {
+			url: '/usuarios',
+			templateUrl: 'views/usuarios.tpl.html',
+			controller: 'UsuariosCtrl'
 		});
 
 
