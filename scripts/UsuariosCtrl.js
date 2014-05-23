@@ -1,4 +1,4 @@
-angular.module('rutasApp')
+angular.module('grupouno')
 .controller('UsuariosCtrl', ['$scope', '$http', function ($scope, $http) {
 	var servidor = 'http://olimpiadas.herokuapp.com/api/';
 

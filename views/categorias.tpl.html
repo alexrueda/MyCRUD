@@ -1,0 +1,62 @@
+<h1><var>Categorias</h1></var>
+
+<form ng-submit="saveNewMateria()" ng-show="mostrarForm"  class="formulario"> 
+    <h3>Crear una categorias  </h3>
+    <div class="row"> 
+      <fieldset>
+        <div class="col-xs-7">
+          Nombre: <input type="text" class="form-control" ng-model="cateNueva.nombre" placeholder="Ingrese el nombre"/></div> <br>
+        <div class="col-xs-7">
+          Nivel: <input type="text" class="form-control" ng-model="cateNueva.level" placeholder="Escriba el nivel" /></div> <br>
+        <div class="col-xs-7">
+          Disciplina: <input type="number" class="form-control" ng-model="cateNueva.displine" placeholder="Escriba la disciplina" /></div> <br>
+        <div class="col-xs-7">
+          Evento: <input type="number" class="form-control" ng-model="cateNueva.event" placeholder="Escriba el evento" /></div> <br>
+      </fieldset>
+    </div> 
+    
+    <input type="submit" class="btn btn-success" value="Crear" ng-click=/>
+    <input type="button" class="btn btn-warning"  value="Cancelar" ng-click="ocultarForm()"/>
+
+</form>    
+<hr/> 
+
+<button ng-show="btCrearMostrar" ng-click="mostrar()"  class="btn btn-primary">Crear Categoria</button>
+
+<div ng-show="false" class="formulario">
+  <h3>Editar alumno {{ categoriaActual.nombre }}:</h3>
+  <form class="form form-inline" ng-submit="guardarEditarCategoria()">
+    <input class="form-control" ng-model="categoriaActual.nombre" type="text" placeholder="Escribe el nuevo Nombre"/>
+    <input type="submit" class="btn btn-primary" value="Guardar" />
+    <input type="submit" class="btn btn-Warning" value="Cancelar" />
+  </form>
+ </div>
+
+<table class="table table-hover">
+  <thead>
+	 <tr>
+		  <td>Id°</td>
+		  <td>Nombre</td>
+      <td>level</td>
+      <td>displine</td>
+      <td>event</td>
+		  <td>Editar</td>
+	 </tr>
+  </thead> 
+
+  <tbody>
+    <tr ng-repeat="(key, categoria) in Categorias">
+  	   <td>{{ key+1 }}</td>
+        <td>{{ categoria.nombre  }}</td>
+       <td>{{ categoria.level  }}</td>
+       <td>{{ categoria.displine  }}</td>
+       <td>{{ categoria.event  }}</td>
+  	   
+       
+  	   <td>
+  		    <a href="#" ng-click="editarCategoria(categoria)">Editar</a>
+  		    <a href="#" ng-click="eliminarCategoria(categoria)">Eliminar</a>
+  	   </td>
+    </tr>
+  </tbody>
+</table>

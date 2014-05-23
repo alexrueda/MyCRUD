@@ -1,0 +1,52 @@
+<h1><var>NIVELES</h1></var>
+
+<form ng-submit="GuardarNuevoNivel()" name="frmNewUser" ng-show="mostrando">
+	<blockquote><h4><strong>Crear un nivel</h4></strong></blockquote>
+	<div class="control-group">
+ 		 	<input type="button" class="btn btn-primary" class="" value="Cancelar" ng-click="ocultarForm()"> <br>
+<div class="row">
+	<fieldset>
+ 		 <legend>Ingrese los datos:</legend>
+
+ 		 <div class="col-xs-7">
+			nivel: <input type="text"  class="form-control" ng-model="nivelNuevo.nivel" ></div><br>
+		<div class="col-xs-7">
+			Evento: <input type="text" class="form-control" ng-model="nivelNuevo.event" ></div> <br>
+		
+ </fieldset>
+</div>
+		
+	</div> <br> 
+
+	<input type="submit" class="btn btn-success" class="" value="Crear">
+	<input type="button" class="btn btn-warning" class="" value="Cancelar" ng-click="ocultarForm()">
+</form>
+
+<hr/>
+
+<button ng-show="btCrearMostrar" ng-click="mostrarForm()" class="btn btn-primary">Crear nivel</button>
+
+<table class="table table-hover">
+  <thead> <br>
+   	<tr>
+		<td>No</td>	
+		<td>nivel</td>
+		<td>Evento</td>
+		<td>Eliminar</td>
+	</tr>
+   </thead>
+	
+	
+  <tbody>
+  	<tr ng-repeat="(key, nivel) in niveles ">
+		<td>{{ key+1 }}</td>
+		<td>{{ nivel.nivel }}</td>
+		<td>{{ nivel.event }}</td>
+	
+
+		<td><a ng-click="DeleteNivel(nivel, key)" href="#">Eliminar</a></td>
+	</tr>
+
+  </tbody>
+  
+</table>

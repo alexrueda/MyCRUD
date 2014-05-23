@@ -1,0 +1,60 @@
+<h1><var>IDIOMAS</h1></var>
+
+<form ng-submit="GuardarNuevoIdioma()" name="frmNewUser" ng-show="mostrando">
+	<blockquote><h4><strong>Idiomas</h4></strong></blockquote>
+	<div class="control-group">
+ 		 	<input type="button" class="btn btn-primary" class="" value="Cancelar" ng-click="ocultarForm()"> <br>
+<div class="row">
+	<fieldset>
+ 		 <legend>Ingrese los datos:</legend>
+
+ 		 <div class="col-xs-7">
+			Código: <input type="text"  class="form-control" ng-model="idiomaNuevo.codigo" ></div><br>
+		<div class="col-xs-7">
+			Código 2: <input type="text" class="form-control" ng-model="idiomaNuevo.codigo2" ></div> <br>
+		<div class="col-xs-7">
+			Descripción: <input type="text"  class="form-control" ng-model="idiomaNuevo.descripcion" ></div><br>
+		<div class="col-xs-7">
+			Original: <input type="text" class="form-control" ng-model="idiomaNuevo.original" ></div> <br>
+		
+ </fieldset>
+</div>
+		
+	</div> <br> 
+
+	<input type="submit" class="btn btn-success" class="" value="Crear">
+	<input type="button" class="btn btn-warning" class="" value="Cancelar" ng-click="ocultarForm()">
+</form>
+
+<hr/>
+
+<button ng-show="btCrearMostrar" ng-click="mostrarForm()" class="btn btn-primary">Idiomas</button>
+
+<table class="table table-hover">
+  <thead> <br>
+   	<tr>
+		<td>No</td>	
+		<td>Código</td>
+		<td>Código 2</td>
+		<td>Descripción</td>
+		<td>Original</td>
+		<td>Eliminar</td>
+	</tr>
+   </thead>
+	
+	
+  <tbody>
+  	<tr ng-repeat="(key, idioma) in idiomas ">
+		<td>{{ key+1 }}</td>
+		<td>{{ idioma.codigo }}</td>
+		<td>{{ idioma.codigo2 }}</td>
+		<td>{{ idioma.descripcion }}</td>
+		<td>{{ idioma.original }}</td>
+	
+
+		<td><a ng-click="DeleteIdioma(idioma, key)" href="#">Eliminar</a></td>
+	</tr>
+
+  </tbody>
+  
+</table>

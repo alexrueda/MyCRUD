@@ -1,0 +1,58 @@
+<h1>Inscripciones</h1>
+<form ng-submit="SaveNewIdioma()" name="frmNewUser" ng-show="mostrando"> 
+	<fieldset>
+ 		 <legend>Ingresa los datos:</legend>
+
+ 		 <div class="col-xs-7">
+			Categoria: <input type="text"  class="form-control" ng-model="InscripcionNueva.categoria"></div><br>
+		<div class="col-xs-7">
+			Usuario: <input type="text" class="form-control" ng-model="InscripcionNueva.user"></div> <br>
+		<div class="col-xs-7">
+			Iniciado Por : <input type="text" class="form-control" ng-model="InscripcionNueva.signed_by"></div> <br>
+		<div class="col-xs-7">
+			Creado Por: <input type="text" class="form-control" ng-model="InscripcionNueva.created_at  "></div> <br>
+		<div class="col-xs-7">
+			Subido Por: <input type="numbre" class="form-control" ng-model="InscripcionNueva.udpated_at"></div> <br>
+		<div class="col-xs-10">
+			allowed: <input type="checkbox" class="control-group"></div><br>
+		
+ </fieldset>
+	<br> 
+
+	<input type="submit" class="btn btn-success" value="Crear">
+	<input type="button" class="btn btn-warning" value="Cancelar" ng-click="ocultarForm()">
+</form>
+
+<hr/>
+
+<button ng-show="btCrearMostrar" ng-click="mostrarForm()" class="btn btn-primary">Crear Idiomas</button>
+
+<table class="table table-hover">
+  <thead> <br>
+   	<tr>
+		<td>Id°</td>	
+		<td>Categoria</td>
+		<td>Usuario</td>
+		<td>Iniciado Por</td>
+		<td>Creado Por</td>
+		<td>Subido Por</td>
+	</tr>
+   </thead>
+	
+	
+  <tbody>
+  	<tr ng-repeat="(key, inscripcion) in Incripciones ">
+		<td>{{ key+1 }}</td>
+		<td>{{ inscripcion.categoria }}</td>
+		<td>{{ inscripcion.user }}</td>
+		<td>{{ inscripcion.signed_by }}</td>
+		<td>{{ inscripcion.created_at }}</td>
+		<td>{{ inscripcion.udpated_at }}</td>
+	
+
+		<td><a ng-click="BorrarInscripcion(inscripcion, key)" href="#">Eliminar</a></td>
+	</tr>
+
+  </tbody>
+  
+</table>

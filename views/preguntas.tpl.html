@@ -1,0 +1,139 @@
+<h3>Modulo Preguntas</h3> 
+<form id="frmPregunta" role="form" ng-submit="CrearPregunta()" class="form-horizontal row"><span class="col-sm-2 col-md-2 col-lg-2"></span>
+  <div class="form-group col-sm-7 col-md-8 col-lg-8">
+    <label for="pregunta" class="control-label col-sm-2">Pregunta</label>
+    <div class="col-sm-10">
+      <textarea rows="3" placeholder="Añade tu pregunta." id="pregunta" name="pregunta" ng-model="NuevaPreg.pregunta" class="form-control"></textarea>
+    </div>
+  </div><span class="col-sm-5 col-md-5 col-lg-5"></span>
+  <div class="form-group col-sm-4 col-md-4 col-lg-4">
+    <label name="categoria" ng-model="categoria" class="control-label">Categoria</label>
+    <div class="col-sm-10">
+      <select class="form-control">
+        <option>Español A</option>
+        <option>Ingles A</option>
+        <option>Matematicas A</option>
+        <option>Biologia A</option>
+        <option>Sociales A</option>
+        <option>Español B</option>
+        <option>Ingles B</option>
+        <option>Matematicas B</option>
+        <option>Biologia B</option>
+        <option>Sociales B</option>
+        <option>Español C</option>
+        <option>Ingles C</option>
+        <option>Matematicas C</option>
+        <option>Biologia C</option>
+        <option>Sociales C</option>
+      </select>
+    </div>
+  </div>
+  <div class="opciones"><span class="col-sm-2 col-md-2 col-lg-2"></span>
+    <div class="form-group col-lg-5 col-sm-4 col-md-5">
+      <div class="input-group"><span class="input-group-addon">A</span>
+        <textarea rows="1" placeholder="Opcion A." name="opcionA" ng-model="opcionA" class="form-control"></textarea>
+      </div>
+      <div class="espacio">
+        <label for="exampleInputFile col-lg-6">Examinar</label>
+        <input type="file" id="exampleInputFile"/>
+        <p class="help-block">Selecciona una imagen.</p>
+      </div>
+    </div><span class="col-sm-1 col-md-1 col-lg-1"></span>
+    <div class="form-group col-lg-5 col-sm-4 col-md-5">
+      <div class="input-group">
+        <textarea rows="1" placeholder="Opcion B." name="opcionB" class="form-control"></textarea><span class="input-group-addon">B</span>
+      </div>
+      <div class="espacio">
+        <label for="exampleInputFile col-lg-6">Examinar</label>
+        <input type="file" id="exampleInputFile"/>
+        <p class="help-block">Selecciona una imagen.</p>
+      </div>
+    </div><span class="col-sm-1 col-md-1 col-lg-1"></span>
+    <div class="form-group col-lg-5 col-sm-4 col-md-5">
+      <div class="input-group"><span class="input-group-addon">C</span>
+        <textarea rows="1" placeholder="Opcion C." ng-model="opcionC" name="opcionC" class="form-control"></textarea>
+      </div>
+      <div class="espacio">
+        <label for="exampleInputFile col-lg-6">Examinar</label>
+        <input type="file" id="exampleInputFile"/>
+        <p class="help-block">Selecciona una imagen.</p>
+      </div>
+    </div><span class="col-sm-1 col-md-1 col-lg-1"></span>
+    <div class="form-group col-lg-5 col-sm-4 col-md-5">
+      <div class="input-group">
+        <textarea rows="1" placeholder="Opcion D." name="opcionD" ng-model="opcionD" class="form-control"></textarea><span class="input-group-addon">D</span>
+      </div>
+      <div class="espacio">
+        <label for="exampleInputFile">Examinar</label>
+        <input type="file" id="exampleInputFile"/>
+        <p class="help-block">Selecciona una imagen.</p>
+      </div>
+    </div><span class="col-sm-5 col-md-5 col-lg-5"></span>
+    <div class="form-group col-sm-7 col-md-7 col-lg-7">
+      <label name="correct" ng-model="correct" class="control-label"> Respuesta correcta.</label>
+      <div class="col-sm-4">
+        <select ng-model="NuevaPreg.correct" class="form-control">
+          <option value="1">Respuesta A</option>
+          <option value="2">Respuesta B</option>
+          <option value="3">Respuesta C</option>
+          <option value="4">Respuesta D</option>
+        </select>
+      </div>
+    </div>
+    <div class="input-group input-group-md col-sm-6 espacio"><span class="input-group-addon">Duracion</span>
+      <input type="number" placeholder="Duracion." ng-model="NuevaPreg.duracion" class="form-control"/>
+    </div>
+    <div class="checkbox espacio">
+      <label>
+        <input type="checkbox" checked="true" ng-model="NuevaPreg.aleatorio"/>
+        <p class="lead">¿Quieres que la pregunta sea aleatoria?.</p>
+      </label>
+    </div><span class="form-group">
+      <input type="submit" value="Guardar" class="btn btn-default"/></span>
+  </div>
+</form>
+<div class="col-xs-12 col-sm-8">
+  <div class="widget-box">
+    <div class="widget-title"><span class="icon"><i class="fa fa-signal"></i></span>
+      <h5>Listado</h5>
+      <div class="buttons"><a></a></div>
+      <div class="widget-content nopadding">
+        <table class="table-bordered table-striped table-hover with-check">
+          <thead>
+            <tr>
+              <th>
+                <input type="checkbox" id="title-table-checkbox" name="title-table-checkbox"/>
+              </th>
+              <th>| Codigo</th>
+              <th class="col-sm-4">| Pregunta</th>
+              <th>| Categoria</th>
+              <th>| Duracion</th>
+              <th>| Aleatoria</th>
+              <th>| Creado Por:</th>
+              <th>| Evento</th>
+              <th class="col-sm-7">| Editar - Eliminar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="(key, value) in questions">
+              <td>
+                <input type="checkbox"/>
+              </td>
+              <td>| {{ key + 1}} - {{value.id}}</td>
+              <td>| {{value.pregunta}}</td>
+              <td>| {{value.categoria}}</td>
+              <td>| {{value.duracion}}</td>
+              <td>| {{value.aleatoria}}</td>
+              <td>| {{value.created_by}}</td>
+              <td>| {{value.event}}</td>
+              <td><a ng-model="btnGuardar" ng-click="EditQuestion(value)" href="#" class="btn btn-primary">Editar</a><a ng-click="DeleteQuestion(value, key)" href="#" class="btn btn-success">Eliminar</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <p>From Julo team</p>
+</div>

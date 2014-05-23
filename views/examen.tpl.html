@@ -1,0 +1,71 @@
+<h1>Examen</h1>
+
+<form ng-submit="SaveNewUsuario()" name="frmNewUser" ng-show="mostrando">
+	<fieldset>
+ 		<div class="col-xs-7">
+			Descripcion: <input type="text"  class="form-control" ng-model="ExamenNuevo.descripcion" ></div><br>
+		<div class="col-xs-7">
+			Dirigido: <input type="checkbox" class="control-group"  ></div> <br>
+		<div class="col-xs-7">
+			Categoria: <input type="numbre" class="form-control" ng-model="ExamenNuevo.categoria" ></div><br>
+		<div class="col-xs-7">
+			Evento: <input type="text" class="form-control" ng-model="ExamenNuevo.evento_id " ></div> <br>
+		<div class="col-xs-7">
+			Duracion de la pregunta: <input type="integer" class="form-control" ng-model="ExamenNuevo.duracion_preg "> </div><br>
+		<div class="col-xs-7">
+			Duracion del Examen: <input type="texto" class="form-control" ng-model="ExamenNuevo.duracion_exam " ></div><br>
+		<div class="col-xs-7">
+			Creado Por: <input type="texto" class="form-control" ng-model="ExamenNuevo.created_by "></div><br>
+		<!--<div class="col-xs-7">
+			Creado En: <input type="texto" class="form-control" ng-model="ExamenNuevo.created_at   "></div><br>
+		<div class="col-xs-7">
+			Subido En: <input type="texto" class="form-control" ng-model="ExamenNuevo.udpated_at  "></div><br>-->
+ </fieldset>
+</div> 
+		
+	</div> <br> 
+
+	<input type="submit" class="btn btn-success" value="Crear">
+	<input type="button" class="btn btn-warning" value="Cancelar" ng-click="ocultarForm()">
+</form>
+
+<hr/>
+
+<button ng-show="btCrearMostrar" ng-click="mostrarForm()" class="btn btn-primary">Crear Usuario</button>
+
+<table class="table table-hover">
+  <thead> <br>
+   	<tr>
+		<td>Id</td>	
+		<td>Descripcion</td>
+		<td>Dirigido</td>
+		<td>Categoria Id</td>
+		<td>Time Ask</td>
+		<td>Time Examen</td>
+		<td>Creado Por</td>
+		<td>Creado a las</td>
+		<td>Subido a las</td>
+		<td>Eliminar</td>
+	</tr>
+   </thead>
+	
+	
+  <tbody>
+  	<tr ng-repeat="(key, examen) in Examenes ">
+		<td>{{ key+1 }}</td>
+		<td>{{ ExamenNuevo.descripcion }}</td>
+		<td>{{ ExamenNuevo.dirigido  }}</td>
+		<td>{{ ExamenNuevo.categoria }}</td>
+		<td>{{ ExamenNuevo.evento_id }}</td>
+		<td>{{ ExamenNuevo.duracion_preg }}</td>
+		<td>{{ ExamenNuevo.duracion_exam }}</td>
+		<td>{{ ExamenNuevo.created_by }}</td>
+		<!--<td>{{ usuario.created_at }}</td>
+		<td>{{ usuario.udpated_at }}</td>-->
+
+		<td><a ng-click="DeleteUsu(usuario, key)" href="#">Eliminar</a></td>
+	</tr>
+
+  </tbody>
+  
+</table>

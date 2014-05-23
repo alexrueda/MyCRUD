@@ -1,4 +1,4 @@
-angular.module('rutasApp', [
+angular.module('grupouno', [
 	'ui.router',
 	'ui.bootstrap',
 	'ngAnimate'
@@ -20,15 +20,65 @@ angular.module('rutasApp', [
 			url: '/main',
 			templateUrl: 'views/main.tpl.html'
 		})
-		.state('materias', {
-			url: '/materias',
-			templateUrl: 'views/materias.tpl.html',
-			controller: 'MateriasCtrl'
-		})
 		.state('usuarios', {
 			url: '/usuarios',
 			templateUrl: 'views/usuarios.tpl.html',
 			controller: 'UsuariosCtrl'
+		})
+		.state('disciplinas', {
+			url: '/disciplinas',
+			templateUrl: 'views/disciplinas.tpl.html',
+			controller: 'disciplinasCtrl'
+		})
+		.state('idiomas', {
+			url: '/idiomas',
+			templateUrl: 'views/idiomas.tpl.html',
+			controller: 'idiomasCtrl'
+		})
+		.state('niveles', {
+			url: '/niveles',
+			templateUrl: 'views/niveles.tpl.html',
+			controller: 'nivelesCtrl'
+		})
+		.state('test', {
+			url: '/test',
+			templateUrl: 'views/test.tpl.html',
+			controller: 'TestCtrl'
+		})
+		.state('inscripciones', {
+			url: '/inscri',
+			templateUrl: 'views/inscripciones.tpl.html',
+			controller: 'InscripcionesCtrl'
+		})
+		.state('entidades', {
+			url: '/entidades',
+			templateUrl: 'views/entidades.tpl.html',
+			controller: 'entidadesCtrl'
+		})
+		.state('categoria', {
+			url: '/categoria',
+			templateUrl: 'views/categorias.tpl.html',
+			controller: 'CategoriasCtrl'
+		})
+		.state('examen', {
+			url: '/examen',
+			templateUrl: 'views/examen.tpl.html',
+			controller: 'ExamenCtrl'
+		})
+		.state('preguntas', {
+			url: '/preguntas',
+			templateUrl: 'views/preguntas.tpl.html',
+			controller: 'preguntasCtrl'
+		})
+		.state('respuestas', {
+			url: '/respuestas',
+			templateUrl: 'views/respuestas.tpl.html',
+			controller: 'RespuestasCtrl'
+		})
+		.state('bug', {
+			url: '/bug',
+			templateUrl: 'views/bug.tpl.html',
+			controller: 'BugCtrl'
 		});
 
 

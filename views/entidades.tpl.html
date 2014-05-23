@@ -1,0 +1,64 @@
+<h1><var>ENTIDADES</h1></var>
+
+<form ng-submit="GuardarNuevaEntidad()" name="frmNewUser" ng-show="mostrando">
+	<blockquote><h4><strong>Crear una entidad</h4></strong></blockquote>
+	<div class="control-group">
+ 		 	<input type="button" class="btn btn-primary" class="" value="Cancelar" ng-click="ocultarForm()"> <br>
+<div class="row">
+	<fieldset>
+ 		 <legend>Ingrese los datos:</legend>
+
+ 		 <div class="col-xs-7">
+			nombre: <input type="text"  class="form-control" ng-model="entidadNueva.nombre" ></div><br>
+		<div class="col-xs-7">
+			Dirección: <input type="text" class="form-control" ng-model="entidadNueva.direccion" ></div> <br>
+		<div class="col-xs-7">
+			Dirigente: <input type="text" class="form-control" ng-model="entidadNueva.dirigente" ></div><br>
+		<div class="col-xs-7">
+			Celular: <input type="text" class="form-control" ng-model="entidadNueva.celular" ></div> <br>
+		<div class="col-xs-7">
+			Evento: <input type="texto" class="form-control" ng-model="entidadNueva.event"> </div><br>
+		
+ </fieldset>
+</div>
+		
+	</div> <br> 
+
+	<input type="submit" class="btn btn-success" class="" value="Crear">
+	<input type="button" class="btn btn-warning" class="" value="Cancelar" ng-click="ocultarForm()">
+</form>
+
+<hr/>
+
+<button ng-show="btCrearMostrar" ng-click="mostrarForm()" class="btn btn-primary">Crear una entidad</button>
+
+<table class="table table-hover">
+  <thead> <br>
+   	<tr>
+		<td>No</td>	
+		<td>Nombre</td>
+		<td>Dirección</td>
+		<td>Dirección</td>
+		<td>Cell</td>
+		<td>Evento</td>
+		<td>Eliminar</td>
+	</tr>
+   </thead>
+	
+	
+  <tbody>
+  	<tr ng-repeat="(key, entidad) in entidades ">
+		<td>{{ key+1 }}</td>
+		<td>{{ entidad.nombre }}</td>
+		<td>{{ entidad.direccion }}</td>
+		<td>{{ entidad.dirigente }}</td>
+		<td>{{ entidad.celular }}</td>
+		<td>{{ entidad.event }}</td>
+		
+
+		<td><a ng-click="DeleteEntidad(entidad, key)" href="#">Eliminar</a></td>
+	</tr>
+
+  </tbody>
+  
+</table>

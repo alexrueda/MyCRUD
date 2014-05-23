@@ -1,0 +1,61 @@
+<h1>Respuestas</h1>
+<form ng-submit="saveNewrRespuesta()" ng-show="mostrando" class="formulario"> 
+  <div class="row"> 
+    <fieldset>
+      <legend>Ingrese los datos:</legend>
+          <div class="col-xs-7">
+            Pregunta: <input type="text" class="form-control" ng-model="RespuestaNueva.preg " ></div><br>
+          <div class="col-xs-7">
+            Test:<input type="text" class="form-control" ng-model="RespuestaNueva.test " /></div><br>
+          <div class="col-xs-7">
+            Pregunta Respondida: <input ng-model="RespuestaNueva.letter_responded" class="form-control" type="text" /></div><br>
+          <div class="col-xs-7">
+            Tiempo: <input class="form-control" ng-model="RespuestaNueva.tiempo " type="text"/></div><br>
+          <div class="col-xs-7">
+            Creado: <input class="form-control" type="text" class="form-control" ng-model="RespuestaNueva.created_at  " ></div><br>
+          <div class="col-xs-7">
+            Subido: <input class="form-control" ng-model="RespuestaNueva.udpated_at " type="text" /></div><br
+      </fieldset>
+  </div>
+    <br>
+      <input type="submit" class="btn btn-success" class="" value="Crear">
+      <input type="button" class="btn btn-warning" class="" value="Cancelar" ng-click="ocultarForm()">
+</form>
+
+<hr/>
+
+<button ng-show="btCrearMostrar" ng-click="mostrarForm()" class="btn btn-primary">Crear Entidad</button>
+
+    
+<hr/> 
+
+
+
+<table class="table table-hover">
+  <thead>
+	 <tr>
+		  <td>Id°</td>
+		  <td>Pregunta</td>
+      <td>Test</td>
+		  <td>Pregunta Respondida</td>
+      <td>Creado</td>
+      <td>Subido</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr ng-repeat="(key, respuesta) in Respuestas">
+  	   <td>{{ key+1}}</td>
+  	   <td>{{ RespuestaNueva.preg  }}</td>
+  	   <td>{{ RespuestaNueva.test  }}</td>
+       <td>{{ RespuestaNueva.letter_responded  }}</td>
+       <td>{{ RespuestaNueva.created_at  }}</td>
+       <td>{{ RespuestaNueva.udpated_at  }}</td>
+     
+  	   <td> 
+  		    <a href="#" ng-click="editarEntidad(value)">Editar</a>
+  		    <a href="#" ng-click="EliminarRespusta(value)">Eliminar</a>
+  	   </td>
+    </tr>
+  </tbody>
+</table>

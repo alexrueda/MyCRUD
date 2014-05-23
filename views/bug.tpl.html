@@ -1,0 +1,64 @@
+<h3>Welcome to Bug</h3>
+<form ng-submit="saveNewNivel()" ng-show="mostrarForm" class="formulario"> 
+    <h3>Crea un nuevo bug</h3> 
+    <div class="row" >
+      <fieldset>
+          <div class="col-xs-7">
+            Descripcion: <input type="text" class="form-control" ng-model="bugNuevo.description" placeholder="Ingrese el una descripcion"/></div> <br>
+          <div class="col-xs-7">
+            Pregunta: <input type="number" class="form-control" ng-model="bugNuevo.preg" placeholder="Escriba el evento" /></div> <br>
+          <div class="col-xs-7">
+            Reportado Por: <input type="number" class="form-control" ng-model="bugNuevo.reported_by" placeholder="Escriba el evento" /></div> <br>
+          <div class="col-xs-7">
+            Fijado Por: <input type="text" class="form-control" ng-model="bugNuevo.fixed_by" placeholder="Escriba el evento" /></div> <br>
+          <div class="col-xs-7">
+          <div class="col-xs-7">
+            Creado Por: <input type="number" class="form-control" ng-model="bugNuevo.created_at" placeholder="Escriba el evento" /></div> <br>
+          <div class="col-xs-7">
+            Subido a las: <input type="number" class="form-control" ng-model="bugNuevo.udpated_at" placeholder="Escriba el evento" /></div> <br>
+
+          <div class="col-xs-7">
+            Fixed: <input type="checkbox" class="control-group"  /></div> <br>
+      </fieldset>
+    </div> <br>
+
+    <input type="submit" class="btn btn-success" value="Crear" ng-click=/>
+    <input type="button" class="btn btn-warning"  value="Cancelar" ng-click="ocultarForm()"/>
+</form> 
+<hr/> 
+
+
+<button ng-show="btCrearMostrar" ng-click="mostrar()" class="btn btn-primary">Crear Nivel</button> 
+
+
+<table class="table table-hover">
+  <thead>
+	 <tr>
+      <td>Id°</td>
+      <td>Descripcion</td>
+      <td>Pregunta</td>
+      <td>Reportado Por</td>
+      <td>Fijado Por</td>
+      <td>Creado Por</td>
+      <td>Subio a las</td>
+      
+   </tr>
+  </thead> 
+
+  <tbody>
+    <tr ng-repeat="(key, Bug) in Buges">
+  	   <td>{{ key+1 }}</td>
+  	   <td>{{ bugNuevo.description }}</td>
+       <td>{{ bugNuevo.preg }}</td>
+       <td>{{ bugNuevo.reported_by }}</td>
+       <td>{{ bugNuevo.fixed_by }}</td>
+       <td>{{ bugNuevo.created_at }}</td>
+       <td>{{ bugNuevo.udpated_at }}</td>
+
+      <td> 
+  		    <a href="#" ng-click="editarNivel(nivel)">Editar</a>
+  		    <a href="#" ng-click="eliminarNivel(nivel, key)">Eliminar</a>
+  	   </td>
+    </tr>
+  </tbody>
+</table>
